@@ -1,0 +1,285 @@
+#include "lib_chart_c.h"
+
+float time_1 = 0.0;
+int ult_1 = 0;
+int ult_2 = 0;
+int touch_1 = 0;
+int touch_2 = 0;
+float sound_1 = 0.0;
+float photoTime = 0.0;
+float rot_angle = 0.0;
+float normUlt2 = 0.0;
+float countUlt2 = 0.0;
+float normUlt1 = 0.0;
+float countUlt1 = 0.0;
+void sub_program1(void);
+void sub_program2(void);
+void sub_program3(void);
+void sub_program4(void);
+void sub_program1(void)
+{
+    if (normUlt1 > normUlt2)
+    {
+        if (touch_2 != 0)
+        {
+            setLED(3,0);
+            MotorInfo smallMotorInfo10;
+            smallMotorInfo10.ports[0].opened = 1;
+            smallMotorInfo10.ports[0].mode = 0;
+            smallMotorInfo10.ports[0].type = 0;
+            smallMotorInfo10.ports[0].value = 0;
+            smallMotorInfo10.ports[0].speed = 0;
+            smallMotorInfo10.ports[1].opened = 0;
+            smallMotorInfo10.ports[2].opened = 0;
+            smallMotorInfo10.ports[3].opened = 1;
+            smallMotorInfo10.ports[3].mode = 0;
+            smallMotorInfo10.ports[3].type = 0;
+            smallMotorInfo10.ports[3].value = 0;
+            smallMotorInfo10.ports[3].speed = -50;
+            smallMotor(&smallMotorInfo10);
+        }
+        else
+        {
+            MotorInfo smallMotorInfo11;
+            smallMotorInfo11.ports[0].opened = 1;
+            smallMotorInfo11.ports[0].mode = 0;
+            smallMotorInfo11.ports[0].type = 0;
+            smallMotorInfo11.ports[0].value = 0;
+            smallMotorInfo11.ports[0].speed = -50;
+            smallMotorInfo11.ports[1].opened = 0;
+            smallMotorInfo11.ports[2].opened = 0;
+            smallMotorInfo11.ports[3].opened = 1;
+            smallMotorInfo11.ports[3].mode = 0;
+            smallMotorInfo11.ports[3].type = 0;
+            smallMotorInfo11.ports[3].value = 0;
+            smallMotorInfo11.ports[3].speed = -50;
+            smallMotor(&smallMotorInfo11);
+        }
+    }
+    else
+    {
+        if (touch_1 != 0)
+        {
+            setLED(2,0);
+            MotorInfo smallMotorInfo12;
+            smallMotorInfo12.ports[0].opened = 1;
+            smallMotorInfo12.ports[0].mode = 0;
+            smallMotorInfo12.ports[0].type = 0;
+            smallMotorInfo12.ports[0].value = 0;
+            smallMotorInfo12.ports[0].speed = 50;
+            smallMotorInfo12.ports[1].opened = 0;
+            smallMotorInfo12.ports[2].opened = 0;
+            smallMotorInfo12.ports[3].opened = 1;
+            smallMotorInfo12.ports[3].mode = 0;
+            smallMotorInfo12.ports[3].type = 0;
+            smallMotorInfo12.ports[3].value = 0;
+            smallMotorInfo12.ports[3].speed = 0;
+            smallMotor(&smallMotorInfo12);
+        }
+        else
+        {
+            MotorInfo smallMotorInfo13;
+            smallMotorInfo13.ports[0].opened = 1;
+            smallMotorInfo13.ports[0].mode = 0;
+            smallMotorInfo13.ports[0].type = 0;
+            smallMotorInfo13.ports[0].value = 0;
+            smallMotorInfo13.ports[0].speed = 50;
+            smallMotorInfo13.ports[1].opened = 0;
+            smallMotorInfo13.ports[2].opened = 0;
+            smallMotorInfo13.ports[3].opened = 1;
+            smallMotorInfo13.ports[3].mode = 0;
+            smallMotorInfo13.ports[3].type = 0;
+            smallMotorInfo13.ports[3].value = 0;
+            smallMotorInfo13.ports[3].speed = 50;
+            smallMotor(&smallMotorInfo13);
+        }
+    }
+}
+void sub_program2(void)
+{
+    playSound("biaoqing_e11",0);
+    if ((touch_1 != 0)&&(touch_2 != 0))
+    {
+        setLED(1,0);
+        MotorInfo smallMotorInfo14;
+        smallMotorInfo14.ports[0].opened = 1;
+        smallMotorInfo14.ports[0].mode = 0;
+        smallMotorInfo14.ports[0].type = 0;
+        smallMotorInfo14.ports[0].value = 0;
+        smallMotorInfo14.ports[0].speed = 0;
+        smallMotorInfo14.ports[1].opened = 0;
+        smallMotorInfo14.ports[2].opened = 0;
+        smallMotorInfo14.ports[3].opened = 1;
+        smallMotorInfo14.ports[3].mode = 0;
+        smallMotorInfo14.ports[3].type = 0;
+        smallMotorInfo14.ports[3].value = 0;
+        smallMotorInfo14.ports[3].speed = 0;
+        smallMotor(&smallMotorInfo14);
+    }
+    else
+    {
+        if (touch_1 != 0)
+        {
+            setLED(2,0);
+            MotorInfo smallMotorInfo15;
+            smallMotorInfo15.ports[0].opened = 1;
+            smallMotorInfo15.ports[0].mode = 0;
+            smallMotorInfo15.ports[0].type = 0;
+            smallMotorInfo15.ports[0].value = 0;
+            smallMotorInfo15.ports[0].speed = 50;
+            smallMotorInfo15.ports[1].opened = 0;
+            smallMotorInfo15.ports[2].opened = 0;
+            smallMotorInfo15.ports[3].opened = 1;
+            smallMotorInfo15.ports[3].mode = 0;
+            smallMotorInfo15.ports[3].type = 0;
+            smallMotorInfo15.ports[3].value = 0;
+            smallMotorInfo15.ports[3].speed = 0;
+            smallMotor(&smallMotorInfo15);
+        }
+        else
+        {
+            if (touch_2 != 0)
+            {
+                setLED(3,0);
+                MotorInfo smallMotorInfo16;
+                smallMotorInfo16.ports[0].opened = 1;
+                smallMotorInfo16.ports[0].mode = 0;
+                smallMotorInfo16.ports[0].type = 0;
+                smallMotorInfo16.ports[0].value = 0;
+                smallMotorInfo16.ports[0].speed = 0;
+                smallMotorInfo16.ports[1].opened = 0;
+                smallMotorInfo16.ports[2].opened = 0;
+                smallMotorInfo16.ports[3].opened = 1;
+                smallMotorInfo16.ports[3].mode = 0;
+                smallMotorInfo16.ports[3].type = 0;
+                smallMotorInfo16.ports[3].value = 0;
+                smallMotorInfo16.ports[3].speed = -50;
+                smallMotor(&smallMotorInfo16);
+            }
+            else
+            {
+                MotorInfo smallMotorInfo17;
+                smallMotorInfo17.ports[0].opened = 1;
+                smallMotorInfo17.ports[0].mode = 0;
+                smallMotorInfo17.ports[0].type = 0;
+                smallMotorInfo17.ports[0].value = 0;
+                smallMotorInfo17.ports[0].speed = -50;
+                smallMotorInfo17.ports[1].opened = 0;
+                smallMotorInfo17.ports[2].opened = 0;
+                smallMotorInfo17.ports[3].opened = 1;
+                smallMotorInfo17.ports[3].mode = 0;
+                smallMotorInfo17.ports[3].type = 0;
+                smallMotorInfo17.ports[3].value = 0;
+                smallMotorInfo17.ports[3].speed = 50;
+                smallMotor(&smallMotorInfo17);
+            }
+        }
+    }
+}
+void sub_program3(void)
+{
+    time_1 = getTime();
+    if (time_1 > photoTime)
+    {
+        camera(1);
+        photoTime=(time_1+(3.00));
+        setDisplayImage(0,"1");
+    }
+}
+void sub_program4(void)
+{
+    normUlt1=(0.00);
+    normUlt2=(0.00);
+    countUlt1=(0.00);
+    countUlt2=(0.00);
+    int a_3=0;
+    for (a_3= 0;a_3 < 3;a_3++)
+    {
+        ult_1 = getSensorAIValue(4,2);
+        if ((ult_1 != 0)&&(ult_1 < 1500))
+        {
+            normUlt1=(normUlt1+(ult_1));
+            countUlt1=(countUlt1+(1.00));
+        }
+        ult_2 = getSensorAIValue(5,2);
+        if ((ult_2 != 0)&&(ult_2 < 1500))
+        {
+            normUlt2=(normUlt2+(ult_2));
+            countUlt2=(countUlt2+(1.00));
+        }
+    }
+    if (countUlt1 != 0)
+    {
+        normUlt1=(normUlt1/
+        (countUlt1));
+    }
+    else
+    {
+        normUlt1=(1500.00);
+    }
+    if (countUlt2 != 0)
+    {
+        normUlt2=(normUlt2/
+        (countUlt2));
+    }
+    else
+    {
+        normUlt2=(1500.00);
+    }
+}
+int main(int argc, char**argv)
+{
+    Abilix_C_Init();
+    photoTime=(0.00);
+    sound_1=(0.00);
+    while (1)
+    {
+        if (sound_1 > 60)
+        {
+            sub_program4();
+            touch_1 = getSensorAIValue(7,3);
+            touch_2 = getSensorAIValue(2,3);
+            if ((normUlt1 < 150)||(normUlt2 < 150))
+            {
+                setLED(1,0);
+                if ((normUlt1 < 70)||(normUlt2 < 70))
+                {
+                    sub_program2();
+                }
+                else
+                {
+                    sub_program1();
+                }
+                sub_program3();
+            }
+            else
+            {
+                MotorInfo smallMotorInfo18;
+                smallMotorInfo18.ports[0].opened = 1;
+                smallMotorInfo18.ports[0].mode = 0;
+                smallMotorInfo18.ports[0].type = 0;
+                smallMotorInfo18.ports[0].value = 0;
+                smallMotorInfo18.ports[0].speed = 30;
+                smallMotorInfo18.ports[1].opened = 0;
+                smallMotorInfo18.ports[2].opened = 0;
+                smallMotorInfo18.ports[3].opened = 1;
+                smallMotorInfo18.ports[3].mode = 0;
+                smallMotorInfo18.ports[3].type = 0;
+                smallMotorInfo18.ports[3].value = 0;
+                smallMotorInfo18.ports[3].speed = -30;
+                smallMotor(&smallMotorInfo18);
+                time_1 = getTime();
+                if (time_1 > photoTime)
+                {
+                    closeDisplay();
+                }
+            }
+        }
+        else
+        {
+            sound_1 = getVolume();
+        }
+    }
+    Abilix_C_Exit();
+    return 0;
+}
